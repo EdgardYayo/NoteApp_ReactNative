@@ -1,6 +1,5 @@
 import {
   Dimensions,
-  Platform,
   Pressable,
   StyleSheet,
   Text,
@@ -8,17 +7,18 @@ import {
 } from "react-native";
 import React from "react";
 import Icon from 'react-native-vector-icons/Ionicons'
+import { ScreenType } from "../constants/constants";
 
-const HomeScreen = () => {
+const HomeScreen = ({ onExit }) => {
   return (
     <View style={styles.container}>
-      <Pressable>
+      <Pressable onPress={() => onExit(ScreenType.addNote)}>
         <View style={styles.itemButton}>
           <Text style={styles.title}>Add New Note</Text>
           <Icon style={styles.icon} name="add-circle-outline"/>
         </View>
       </Pressable>
-      <Pressable>
+      <Pressable onPress={() => onExit(ScreenType.allNotes)}>
         <View style={styles.itemButton}>
           <Text  style={styles.title}>View All Notes</Text>
           <Icon style={styles.icon} name="arrow-forward-circle-outline" />

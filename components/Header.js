@@ -18,13 +18,14 @@ const styles = StyleSheet.create({
         backgroundColor: Platform.OS == "android" ? "#f96d00" : "white",
         paddingTop: 30,
         borderWidth:2,
-        borderColor:"#393e46"
+        borderColor:"#aaa",
+        elevation:5
     },
     headerTitle: {
         color: Platform.OS == "android" ? "#222831" : "purple",
         fontSize: 30,
         fontWeight: "800",
-        marginTop: 10,
-        textAlign:"center",
+        margin: 10,
+        textAlign:"left",
     }
 })
