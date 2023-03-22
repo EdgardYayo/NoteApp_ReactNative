@@ -1,14 +1,19 @@
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import React, { useState } from "react";
+import { ScreenType } from "../constants/constants";
 
-const AddNote = () => {
+const AddNote = ({ onSave, onExit }) => {
   const [enteredText, setEnteredText] = useState("");
+
   const handleChange = (val) => {
     setEnteredText(val)
   };
 
   const handleClick = () => {
-    console.log(enteredText);
+    if(enteredText.trim().length > 0){
+      onSave(enteredText);
+      onExit(ScreenType.allNotes)
+    }
   }
 
   return (
